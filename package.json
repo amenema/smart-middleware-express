@@ -1,11 +1,50 @@
 {
   "name": "smart-middleware-express",
+  "description": "auto load middleware, auto matching middleware by config",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amenema/smart-middleware-express.git"
   },
-  "author": "amenema",
-  "license": "MIT"
+  "main": "index.js",
+  "files":[
+    "lib",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "node ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --colors ./test/test.js",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
+  },
+  "engines": {
+    "node": "> 4.0"
+  },
+  "author": "amenema <menzhongxin@163.com>",
+  "license": "MIT",
+  "keywords": [
+    "express",
+    "middleware",
+    "router",
+    "route",
+    "filter",
+    "regExp"
+  ],
+  "bugs": {
+    "url": "https://github.com/amenema/smart-middleware-express/issues"
+  },
+  "homepage": "https://github.com/amenema/smart-middleware-express",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "lodash": "^4.17.2"
+  },
+  "devDependencies":{
+    "express": "~4.13.1",
+    "coveralls": "^2.11.15",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1",
+    "supertest": "^2.0.1"
+  }
 }
+
