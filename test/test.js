@@ -21,9 +21,18 @@ describe('util test', () => {
     config = path.join(__dirname, './config.js')
     fakeUrl = path.join(__dirname, '/fake')
   })
-  it('exists', () => {
+
+  it('throw err', (done) => {
+    utils.load('', (err, rs) => {
+      err.message.should.be.equal("ENOENT: no such file or directory, scandir ''")
+      done()
+    })
+  })
+
+  it('exists', (done) => {
     utils.exists(routers).should.be.true()
     utils.exists(fakeUrl).should.be.false()
+    done()
   })
 
   it('isDir', (done) => {
@@ -39,14 +48,14 @@ describe('util test', () => {
   })
 
   it('load a file', (done) => {
-    utils.load(config, (rs) => {
+    utils.load(config, (err, rs) => {
       rs.length.should.be.equal(0)
       done()
     })
   })
 
   it('load a dir', (done) => {
-    utils.load(routers, (rs) => {
+    utils.load(routers, (err, rs) => {
       rs.length.should.be.equal(2)
       done()
     })
