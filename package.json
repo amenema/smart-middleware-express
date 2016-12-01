@@ -39,6 +39,7 @@
     "lodash": "^4.17.2"
   },
   "devDependencies":{
+    "lodash": "^4.17.2",
     "express": "~4.13.1",
     "coveralls": "^2.11.15",
     "istanbul": "^0.4.5",
