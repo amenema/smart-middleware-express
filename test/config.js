@@ -4,7 +4,7 @@
  */
 exports.rules = [
     {
-        rule: '/api/index',
+        conform: '/api/index',
         before: [(req, res, next) => {
             req.before = '_b_1'
             next()
@@ -25,7 +25,7 @@ exports.rules = [
         ]
     },
     {
-        rule: '\\/api',
+        conform: /\/api/,
         before: [ (req, res, next) => {
             req.before += '_b_3'
             next()
