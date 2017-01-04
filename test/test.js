@@ -78,7 +78,7 @@ describe('auto load', () => {
     req.get('/api/index')
       .expect(200)
       .end((err, rs) => {
-        rs.body.should.be.equal('_b_1_b_2_b_3_b_4_c_index_a_4_a_3_a_2_a_1')
+        rs.body.should.be.equal('_b_1_b_2_b_3_b_4_b_5_c_index_a_1_a_2_a_3_a_4_a_5_a_6_a_7')
         done()
       })
   })
